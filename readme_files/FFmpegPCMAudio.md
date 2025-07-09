@@ -1,4 +1,4 @@
-[back to README](README.md)
+[back to README](../README.md)
 # discord.FFMpegPCMAudio vs. Other Options:
 - built-in `discord.FFMpegPCMAudio`:
     - `discord.FFMpegPCMAudio` runs and handles `FFmpeg` subprocess

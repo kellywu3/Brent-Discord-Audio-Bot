@@ -1,4 +1,4 @@
-[back to README](README.md)
+[back to README](../README.md)
 # Class-based Inheritance vs. Function Decorators:
 - class-based inheritance and function decorators
     - allow for the same defined functionality with different code structures

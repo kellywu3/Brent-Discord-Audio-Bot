@@ -1,4 +1,4 @@
-[back to README](README.md)
+[back to README](../README.md)
 #### yt-dlp vs. other options
 - Youtube and `yt-dlp`
 

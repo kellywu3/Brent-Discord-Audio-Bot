@@ -1,4 +1,4 @@
-[back to README](README.md)
+[back to README](../README.md)
 # Music Queue Tuple Linked List vs. Other Options:
 
 - linear linked list queue (linked list with nodes)

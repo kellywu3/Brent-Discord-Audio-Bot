@@ -1,4 +1,4 @@
-[back to README](README.md)
+[back to README](../README.md)
 # os and dotenv vs. Other Options:
 - `os` and `dotenv`:
     - environment variables are set from a `.env` file, loaded using the `dotenv` library and retrieved using the `os` library

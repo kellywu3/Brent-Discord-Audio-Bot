@@ -1,4 +1,4 @@
-[back to README](README.md)
+[back to README](../README.md)
 # Enums vs. Class Constants:
 - Enums
     - symbolic names represented as integers

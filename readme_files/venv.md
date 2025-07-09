@@ -1,4 +1,4 @@
-[back to README](README.md)
+[back to README](../README.md)
 # venv vs. Other Options:
 - `venv`
     - recommended over other virtual environments (virtualenv, pipenv, pyenv, poetry, conda etc.) for python native environments as it is built-into `Python3`
