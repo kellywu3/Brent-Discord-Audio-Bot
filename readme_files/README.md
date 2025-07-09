@@ -434,7 +434,7 @@ $ deactivate
 
 - delete virtual environment
 ```Zsh
-$ rm -rf /path/to/new/virtual/environment
+$ rm -rf /path/to/virtual/environment
 ```
 
 ### [X] Install discord.py within virtual environment
@@ -708,13 +708,7 @@ def [after function](error:Exception=None):
 self.voice_client.play(source=[source], after=[after function])
 ```
 
-### [X] Force quit a script that isn't responding
-
-- use the process status command to find all currently running processes
-    - show processes for all users, the owner of the process, and the background or detached processes
-    - pipe the output to find processes that contain python
-
-### [X] YT-DLP
+### [X] Force quitting a script that isn't responding
 
 - use the process status command to find all currently running processes
     - show processes for all users, the owner of the process, and the background or detached processes
@@ -733,6 +727,10 @@ ps aux | grep python
 ```zsh
 kill [PID]
 ```
+
+### [X] Extracting full metadata using yt-dlp
+
+- 
 
 ## RESOURCES
 - https://docs.python.org/3/howto/logging.html#logging-basic-tutorial

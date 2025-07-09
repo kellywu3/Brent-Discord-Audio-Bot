@@ -21,18 +21,8 @@ class Yt_Dlp(yt_dlp.YoutubeDL):
         
         super().__init__(ytdl_options)
 
-    def get_info(self, content:str='') -> dict:
-        logger.info(f'Retrieving {content}')
-
-        entry = self.extract_info(content, download=False)
-
-        logger.info(f'Retrieved, filtering info')
-
-        queried_info = AudioMetadata.retrieve_audio_metadata(entry)
-
-        return queried_info
-
-    def search_content(self, content:str='', max_results:int=5) -> list[tuple]:
+    # returns a list of audio metadata tuples
+    def retrieve(self, content:str='', max_results:int=1) -> list[tuple]:
         logger.info(f'Searching and retrieving {content}')
 
         results = self.extract_info(f'ytsearch{max_results}:{content}', download=False)
@@ -41,8 +31,14 @@ class Yt_Dlp(yt_dlp.YoutubeDL):
         logger.info(f'Search query "{content}" retrieved, filtering info')
 
         queried_info = []
-        for entry in entries:
-            print(f'getting audio meta for an entry')
-            queried_info.append(AudioMetadata.retrieve_audio_metadata(entry))
+        for initial_entry in entries:
+            url = initial_entry['webpage_url']
+            logger.info(f'extracting entry from {url}')
+
+            entry = self.extract_info(url, download=False)
+            entry_metadata = AudioMetadata.retrieve_audio_metadata(entry)
+            logger.info(f'retrieved metadata:\n{entry_metadata}')
+            
+            queried_info.append(entry_metadata)
 
         return queried_info

@@ -26,6 +26,11 @@ class Client(discord.Client):
             logger.info(f'Audio player not found, initializing audio player')
             self.audio_players[guild] = AudioPlayer(self)
             return self.audio_players[guild]
+        
+    async def on_voice_state_update(self, member, before, after):
+        if member.id == self.user.id:
+            audio_player = self.get_audio_player(member.guild)
+            await audio_player.handle_voice_state_update(member, before, after)
 
     async def on_ready(self):
         logger.info(f'Logged on as {self.user}')
@@ -38,7 +43,7 @@ class Client(discord.Client):
         
         audio_player = self.get_audio_player(message.guild)
         
-        match misc.get_first_n_words(message.content):
+        match misc.get_first_n_words(message.content, 1):
             case '\\hello':
                 await message.channel.send(f'Hello.')
 
